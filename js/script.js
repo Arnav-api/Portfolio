@@ -284,7 +284,7 @@
   var terminalInput = document.getElementById('terminalInput');
 
   var LINKS = {
-    github: 'https://github.com/arnavkhandelwal',
+    github: 'https://github.com/Arnav-api',
     linkedin: 'https://www.linkedin.com/in/arnav-khandelwal-414546313/',
     leetcode: 'https://leetcode.com/u/Arnav1_Khandelwal0/'
   };
@@ -476,13 +476,13 @@
      no build step, no server. Purely a nice-to-have.)
   ========================================================= */
   var githubStat = document.getElementById('githubStat');
-  fetch('https://api.github.com/users/arnavkhandelwal')
+  fetch('https://api.github.com/users/Arnav-api')
     .then(function (r) { if (!r.ok) throw new Error('no'); return r.json(); })
     .then(function (data) {
       if (typeof data.public_repos === 'number') {
         githubStat.textContent = 'GitHub · ' + data.public_repos + ' public repos';
       }
     })
-    .catch(function () { githubStat.textContent = 'GitHub · @arnavkhandelwal'; });
+    .catch(function () { githubStat.textContent = 'GitHub · @Arnav-api'; });
 
 })();
