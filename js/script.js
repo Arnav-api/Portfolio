@@ -285,7 +285,7 @@
 
   var LINKS = {
     github: 'https://github.com/arnavkhandelwal',
-    linkedin: 'https://linkedin.com/in/arnavkhandelwal',
+    linkedin: 'https://www.linkedin.com/in/arnav-khandelwal-414546313/',
     leetcode: 'https://leetcode.com/u/Arnav1_Khandelwal0/'
   };
 
