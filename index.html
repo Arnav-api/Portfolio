@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arnav Khandelwal — Software Engineer</title>
+<meta name="description" content="Arnav Khandelwal — Software Engineer. DSA, full-stack (Python/Django/DRF), computer vision & ML systems.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌘</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- ===== Title bar ===== -->
+  <header class="titlebar">
+    <div class="titlebar-left">
+      <span class="dot dot--red" aria-hidden="true"></span>
+      <span class="dot dot--amber" aria-hidden="true"></span>
+      <span class="dot dot--green" aria-hidden="true"></span>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle file explorer" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 3H15M1 8H15M1 13H15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+      <span class="titlebar-path">arnav@portfolio<span class="titlebar-path-muted">:~$</span></span>
+    </div>
+    <div class="titlebar-right">
+      <button class="palette-trigger" id="paletteTrigger" aria-label="Open command palette">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Jump to…</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <span class="clock" id="clock" aria-live="off"></span>
+    </div>
+  </header>
+
+  <div class="workspace">
+
+    <!-- ===== Sidebar / Explorer ===== -->
+    <nav class="explorer" id="explorer" aria-label="Sections">
+      <div class="explorer-title">Explorer</div>
+      <ul class="filetree">
+        <li><button class="file" data-target="home" data-icon="md"><span class="ficon ficon--md">M↓</span>home.md</button></li>
+        <li><button class="file" data-target="experience" data-icon="js"><span class="ficon ficon--js">{}</span>experience.js</button></li>
+        <li class="folder-item">
+          <button class="folder" id="projectsFolder" aria-expanded="true">
+            <svg class="chev" width="10" height="10" viewBox="0 0 10 10"><path d="M2 1L7 5L2 9" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            <span class="ficon ficon--folder">▸</span>projects
+          </button>
+          <ul class="filetree filetree--nested" id="projectsList">
+            <li><button class="file file--sub" data-target="projects" data-project="ecommerce" data-icon="py"><span class="ficon ficon--py">Py</span>ecommerce.py</button></li>
+            <li><button class="file file--sub" data-target="projects" data-project="motogp" data-icon="ipynb"><span class="ficon ficon--ipynb">◎</span>motogp.ipynb</button></li>
+            <li><button class="file file--sub" data-target="projects" data-project="ensemble" data-icon="py"><span class="ficon ficon--py">Py</span>ensemble.py</button></li>
+          </ul>
+        </li>
+        <li><button class="file" data-target="skills" data-icon="json"><span class="ficon ficon--json">{ }</span>skills.json</button></li>
+        <li><button class="file" data-target="education" data-icon="yml"><span class="ficon ficon--yml">#</span>education.yml</button></li>
+        <li><button class="file" data-target="achievements" data-icon="log"><span class="ficon ficon--log">≣</span>achievements.log</button></li>
+        <li><button class="file" data-target="contact" data-icon="sh"><span class="ficon ficon--sh">&gt;_</span>contact.sh</button></li>
+      </ul>
+
+      <div class="explorer-footer">
+        <a class="footer-link" href="https://github.com/arnavkhandelwal" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a class="footer-link" href="https://linkedin.com/in/arnavkhandelwal" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          LinkedIn
+        </a>
+        <a class="footer-link" href="https://leetcode.com/u/Arnav1_Khandelwal0/" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 1 6.4 8.4c-.5.5-.8 1.2-.8 1.9s.3 1.4.8 1.9l5.6 5.6c.5.5.8 1.2.8 1.9s-.3 1.4-.8 1.9-1.2.8-1.9.8-1.4-.3-1.9-.8l-5.6-5.6a5.1 5.1 0 0 1 0-7.2L10.1.9c.5-.5 1.2-.8 1.9-.8s1.4.3 1.9.8l-.4.1Z"/><path d="M9.9 15.1h9.7c1.1 0 2 .9 2 2s-.9 2-2 2H9.9c-1.1 0-2-.9-2-2s.9-2 2-2Zm3.6-6.2h6.1c1.1 0 2 .9 2 2s-.9 2-2 2h-6.1c-1.1 0-2-.9-2-2s.9-2 2-2Z"/></svg>
+          LeetCode
+        </a>
+      </div>
+    </nav>
+
+    <div class="explorer-scrim" id="explorerScrim"></div>
+
+    <!-- ===== Main panel ===== -->
+    <main class="panel">
+      <div class="breadcrumb" id="breadcrumb">
+        <span>portfolio</span><span class="crumb-sep">/</span><span id="breadcrumbCurrent">home.md</span>
+      </div>
+
+      <div class="tabbar" id="tabbar">
+        <button class="tab active" data-tab="home">home.md</button>
+      </div>
+
+      <div class="panel-scroll" id="panelScroll">
+
+        <!-- ---------- HOME ---------- -->
+        <section class="view active" id="view-home" data-view="home">
+          <div class="hero">
+            <p class="prompt-line"><span class="prompt-sym">$</span> whoami</p>
+            <h1 class="hero-name" id="typedName" aria-label="Arnav Khandelwal"></h1>
+            <p class="hero-role"><span class="tk-kw">const</span> <span class="tk-var">role</span> = <span class="tk-str">"Software Engineer"</span><span class="tk-punc">;</span></p>
+            <p class="hero-sub">
+              Data structures &amp; algorithms, full-stack development (Python, Django, DRF), and hands-on
+              work across ML systems, computer vision, and hardware-software integration.
+              Competitive Kaggle rankings — 4th/70 teams, 32nd/363 participants.
+            </p>
+
+            <div class="hero-meta">
+              <span class="meta-chip"><span class="status-dot" aria-hidden="true"></span>Open to Software Development Engineer roles</span>
+              <span class="meta-chip meta-chip--muted">Jaipur, Rajasthan</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="https://github.com/arnavkhandelwal" target="_blank" rel="noopener">View GitHub</a>
+              <a class="btn" href="mailto:aarnavlko@gmail.com">Say hello</a>
+              <button class="btn btn--ghost" data-jump="contact">Open contact.sh</button>
+            </div>
+          </div>
+
+          <div class="statgrid">
+            <div class="statcard">
+              <span class="statcard-num" data-count="70">0</span>
+              <span class="statcard-label">teams beaten to <strong>4th place</strong> — Kaggle ensemble</span>
+            </div>
+            <div class="statcard">
+              <span class="statcard-num" data-count="363">0</span>
+              <span class="statcard-label">participants ranked against — <strong>32nd</strong>, MotoGP lap-time model</span>
+            </div>
+            <div class="statcard">
+              <span class="statcard-num" data-count="93">0</span><span class="statcard-suffix">%</span>
+              <span class="statcard-label">mAP@0.5 on a YOLOv8 damage-detection model</span>
+            </div>
+            <div class="statcard">
+              <span class="statcard-num" data-count="9" data-decimal="0.08" data-final="9.08">0</span>
+              <span class="statcard-label">CGPA at Manipal University Jaipur</span>
+            </div>
+          </div>
+
+          <p class="hero-hint">Tip — press <kbd>Ctrl</kbd>+<kbd>K</kbd> (or <kbd>⌘</kbd>+<kbd>K</kbd>) any time to jump straight to a file.</p>
+        </section>
+
+        <!-- ---------- EXPERIENCE ---------- -->
+        <section class="view" id="view-experience" data-view="experience">
+          <h2 class="view-title">experience.js</h2>
+          <p class="view-kicker">A short changelog of where the work happened.</p>
+
+          <ol class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="tl-head">
+                  <h3>Computer Vision &amp; Robotics Intern</h3>
+                  <span class="tl-date">May 2026 – Jul 2026</span>
+                </div>
+                <p class="tl-org">CYRAN AI Solutions Pvt. Ltd. <span class="tl-org-tag">IIT-Delhi incubated startup</span> · New Delhi, India</p>
+                <ul class="tl-list">
+                  <li>Engineered an 8-week, end-to-end Structure-from-Motion (SfM) 3D reconstruction system spanning hardware and software, from controlled image acquisition to reference-based geometric inspection.</li>
+                  <li>Designed and fabricated (CAD, 3D printing, woodworking) a dedicated image-acquisition apparatus for stable, repeatable multi-view capture.</li>
+                  <li>Built a computer vision pipeline (<span class="tag" data-skill="OpenCV">OpenCV</span>, <span class="tag" data-skill="COLMAP">COLMAP</span>) achieving <strong>~0.4–0.5mm radial resolution</strong> on a low-cost custom setup.</li>
+                  <li>Optimized the full pipeline to complete in <strong>1,530.4s (~25.5 min)</strong> and built a web-based GUI to run the reconstruction workflow.</li>
+                  <li>Containerized the system with <span class="tag" data-skill="Docker">Docker</span> for reproducible, one-command deployment.</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="tl-head">
+                  <h3>Machine Learning Intern</h3>
+                  <span class="tl-date">Jun 2024 – Jul 2024</span>
+                </div>
+                <p class="tl-org">LaunchED Global · Remote</p>
+                <ul class="tl-list">
+                  <li>Built an end-to-end employee CTC (cost-to-company) prediction system in <span class="tag" data-skill="Python">Python</span>, following modular, testable pipeline design.</li>
+                  <li>Implemented Linear Regression and Random Forest models on a 25k-record dataset, achieving <strong>96% prediction accuracy</strong>.</li>
+                  <li>Designed a full ML pipeline: preprocessing, feature engineering, cross-validation, evaluation.</li>
+                  <li>Ran exploratory data analysis to surface key salary-driving features for stakeholder-facing insights.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ---------- PROJECTS ---------- -->
+        <section class="view" id="view-projects" data-view="projects">
+          <h2 class="view-title">projects/</h2>
+          <p class="view-kicker">Three shipped things — code, links, and what they actually do.</p>
+
+          <div class="projects-grid">
+
+            <article class="project-card" id="project-ecommerce" tabindex="0">
+              <div class="project-card-head">
+                <span class="ficon ficon--py">Py</span>
+                <h3>Full-Stack E-Commerce Platform with Integrated ML Modules</h3>
+              </div>
+              <p class="project-desc">
+                A full-stack e-commerce platform with backend and frontend decoupled through a Django REST
+                Framework API layer handling authentication, product catalog, and cart management. Ships with
+                a trained YOLOv8 damage-detection model exposed over REST endpoints for real-time inference on
+                product images, trained on a combined 12,500-image Kaggle + Roboflow dataset.
+              </p>
+              <div class="project-metrics">
+                <span class="metric"><strong>93%</strong>mAP@0.5</span>
+                <span class="metric"><strong>74%</strong>mAP@50-95</span>
+                <span class="metric"><strong>85%</strong>Precision</span>
+                <span class="metric"><strong>90%</strong>Recall</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag" data-skill="Python">Python</span>
+                <span class="tag" data-skill="Django">Django</span>
+                <span class="tag" data-skill="DRF">DRF</span>
+                <span class="tag" data-skill="YOLO">YOLOv8</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn--sm btn--primary" href="https://github.com/arnavkhandelwal" target="_blank" rel="noopener">View repository</a>
+                <a class="btn btn--sm btn--ghost" href="https://github.com/arnavkhandelwal" target="_blank" rel="noopener">Live demo</a>
+              </div>
+            </article>
+
+            <article class="project-card" id="project-motogp" tabindex="0">
+              <div class="project-card-head">
+                <span class="ficon ficon--ipynb">◎</span>
+                <h3>MotoGP Lap Time Prediction</h3>
+                <span class="project-kaggle">Kaggle</span>
+              </div>
+              <p class="project-desc">
+                Regression models trained on an 800k-row, 37-feature MotoGP telemetry dataset. Feature
+                selection and exploratory data analysis were used to cut RMSE, finishing inside the top
+                tier of the leaderboard.
+              </p>
+              <div class="project-metrics">
+                <span class="metric metric--highlight"><strong>32nd</strong>of 363 (Top 9%)</span>
+                <span class="metric"><strong>800k</strong>rows</span>
+                <span class="metric"><strong>37</strong>features</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag" data-skill="Python">Python</span>
+                <span class="tag" data-skill="Scikit-learn">Scikit-learn</span>
+                <span class="tag" data-skill="Matplotlib">Matplotlib</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn--sm btn--primary" href="https://github.com/arnavkhandelwal" target="_blank" rel="noopener">View repository</a>
+              </div>
+            </article>
+
+            <article class="project-card" id="project-ensemble" tabindex="0">
+              <div class="project-card-head">
+                <span class="ficon ficon--py">Py</span>
+                <h3>Kaggle Competition Ensemble Model</h3>
+                <span class="project-kaggle">Kaggle</span>
+              </div>
+              <p class="project-desc">
+                A weighted ensemble — 85% Logistic Regression blended with 15% LightGBM — built to squeeze
+                extra ROC-AUC out of the leaderboard metric, which secured the best submission across the
+                whole competition run.
+              </p>
+              <div class="project-metrics">
+                <span class="metric metric--highlight"><strong>4th</strong>of 70 teams (Top 6%)</span>
+                <span class="metric"><strong>85/15</strong>ensemble split</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag" data-skill="Python">Python</span>
+                <span class="tag" data-skill="Logistic Regression">Logistic Regression</span>
+                <span class="tag" data-skill="LightGBM">LightGBM</span>
+              </div>
+              <div class="project-actions">
+                <span class="btn btn--sm btn--ghost btn--disabled" title="Add your repo/notebook link">Notebook link — add yours</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ---------- SKILLS ---------- -->
+        <section class="view" id="view-skills" data-view="skills">
+          <h2 class="view-title">skills.json</h2>
+          <p class="view-kicker">Click any skill to see where it actually shows up in the work.</p>
+
+          <div class="skills-code">
+<pre><code>{</code></pre>
+            <div class="skills-block">
+              <div class="skills-row"><span class="tk-key">"languages"</span>: [<span class="tag" data-skill="Python">Python</span>, <span class="tag" data-skill="C">C</span>],</div>
+              <div class="skills-row"><span class="tk-key">"backend_apis"</span>: [<span class="tag" data-skill="Django">Django</span>, <span class="tag" data-skill="DRF">DRF</span>, <span class="tag" data-skill="REST API Design">REST API Design</span>],</div>
+              <div class="skills-row"><span class="tk-key">"ml_and_cv"</span>: [<span class="tag" data-skill="Scikit-learn">Scikit-learn</span>, <span class="tag" data-skill="TensorFlow">TensorFlow</span>, <span class="tag" data-skill="YOLO">YOLO</span>, <span class="tag" data-skill="CNNs">CNNs</span>, <span class="tag" data-skill="OpenCV">OpenCV</span>, <span class="tag" data-skill="COLMAP">COLMAP</span>],</div>
+              <div class="skills-row"><span class="tk-key">"libraries"</span>: [<span class="tag" data-skill="Pandas">Pandas</span>, <span class="tag" data-skill="NumPy">NumPy</span>, <span class="tag" data-skill="Matplotlib">Matplotlib</span>, <span class="tag" data-skill="Seaborn">Seaborn</span>],</div>
+              <div class="skills-row"><span class="tk-key">"tools"</span>: [<span class="tag" data-skill="Docker">Docker</span>, <span class="tag" data-skill="CAD">CAD</span>, <span class="tag" data-skill="Git">Git</span>],</div>
+              <div class="skills-row"><span class="tk-key">"cs_fundamentals"</span>: [<span class="tag" data-skill="DSA">Data Structures &amp; Algorithms</span>, <span class="tag" data-skill="OpenMP">OpenMP</span>, <span class="tag" data-skill="SQL">SQL</span>]</div>
+            </div>
+<pre><code>}</code></pre>
+          </div>
+
+          <p class="skills-hint" id="skillsHint">Select a skill above to filter matching experience and projects.</p>
+        </section>
+
+        <!-- ---------- EDUCATION ---------- -->
+        <section class="view" id="view-education" data-view="education">
+          <h2 class="view-title">education.yml</h2>
+
+          <div class="edu-card">
+            <div class="tl-head">
+              <h3>Manipal University Jaipur</h3>
+              <span class="tl-date">Expected Jun 2028</span>
+            </div>
+            <p class="tl-org">Bachelor of Technology · CGPA <strong>9.08 / 10</strong> · Jaipur, Rajasthan</p>
+            <p class="edu-courses-label">Relevant coursework</p>
+            <ul class="tl-list">
+              <li>Data Structures &amp; Algorithms (C)</li>
+              <li>Computer Architecture</li>
+              <li>SQL Databases</li>
+              <li>Machine Learning</li>
+              <li>Data Visualization</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ---------- ACHIEVEMENTS ---------- -->
+        <section class="view" id="view-achievements" data-view="achievements">
+          <h2 class="view-title">achievements.log</h2>
+          <p class="view-kicker">$ tail -f achievements.log</p>
+
+          <div class="logbox" id="logbox">
+            <div class="logline" data-log>
+              <span class="log-tag log-tag--gold">RANK</span>
+              <span class="log-text"><strong>4th place</strong> out of 70 teams (Top 6%) — Kaggle Ensemble Modeling Competition</span>
+              <span class="log-links">
+                <a href="https://drive.google.com/file/d/19rAW6KL97HCp5s7s2W6BpbPU1QL_fJ05/view?usp=sharing" target="_blank" rel="noopener">Certificate 1</a>
+                <a href="https://drive.google.com/file/d/14AZARzDKQ0rSqAMtLSyUgUv4Bre3wXBj/view?usp=sharing" target="_blank" rel="noopener">Certificate 2</a>
+              </span>
+            </div>
+            <div class="logline" data-log>
+              <span class="log-tag log-tag--teal">RANK</span>
+              <span class="log-text"><strong>32nd place</strong> out of 363 participants (Top 9%) — Burnout Hackathon, Kaggle MotoGP Lap Time Prediction</span>
+              <span class="log-links">
+                <a href="https://drive.google.com/file/d/1HUw94rrBRJFn5y9oRnorurn__1pduUAF/view?usp=sharing" target="_blank" rel="noopener">Certificate</a>
+              </span>
+            </div>
+            <div class="logline" data-log>
+              <span class="log-tag log-tag--violet">CERT</span>
+              <span class="log-text">Internship completion — CYRAN AI Solutions Pvt. Ltd. (IIT-Delhi incubated startup)</span>
+              <span class="log-links">
+                <a href="https://drive.google.com/file/d/1HPnOr0pkFYNkwzsU_I3jvgvvCCr_hIU4/view?usp=drive_link" target="_blank" rel="noopener">Certificate</a>
+              </span>
+            </div>
+            <div class="logline" data-log>
+              <span class="log-tag log-tag--coral">CERT</span>
+              <span class="log-text">Internship completion — LaunchED Global</span>
+              <span class="log-links">
+                <a href="https://drive.google.com/file/d/1WtL7UbVEssdvKqy40UML6qAT2N410yki/view?usp=drive_link" target="_blank" rel="noopener">Certificate</a>
+              </span>
+            </div>
+          </div>
+          <p class="log-note">Certificate links open Google Drive — make sure sharing is set to "Anyone with the link" before this goes live.</p>
+        </section>
+
+        <!-- ---------- CONTACT ---------- -->
+        <section class="view" id="view-contact" data-view="contact">
+          <h2 class="view-title">contact.sh</h2>
+          <p class="view-kicker">A tiny shell. Try <code>help</code>, <code>open github</code>, or <code>email</code>.</p>
+
+          <div class="terminal">
+            <div class="terminal-output" id="terminalOutput">
+              <p>Welcome. Type <span class="tk-str">help</span> to see available commands.</p>
+            </div>
+            <div class="terminal-inputline">
+              <span class="prompt-sym">$</span>
+              <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command input" placeholder="type a command…">
+            </div>
+          </div>
+
+          <div class="contact-cards">
+            <button class="contact-card" data-copy="aarnavlko@gmail.com">
+              <span class="cc-label">Email</span>
+              <span class="cc-value">aarnavlko@gmail.com</span>
+              <span class="cc-action">Copy</span>
+            </button>
+            <button class="contact-card" data-copy="+91 9415111172">
+              <span class="cc-label">Phone</span>
+              <span class="cc-value">+91 9415111172</span>
+              <span class="cc-action">Copy</span>
+            </button>
+            <a class="contact-card" href="https://linkedin.com/in/arnavkhandelwal" target="_blank" rel="noopener">
+              <span class="cc-label">LinkedIn</span>
+              <span class="cc-value">/in/arnavkhandelwal</span>
+              <span class="cc-action">Open</span>
+            </a>
+            <a class="contact-card" href="https://github.com/arnavkhandelwal" target="_blank" rel="noopener">
+              <span class="cc-label">GitHub</span>
+              <span class="cc-value">/arnavkhandelwal</span>
+              <span class="cc-action">Open</span>
+            </a>
+            <a class="contact-card" href="https://leetcode.com/u/Arnav1_Khandelwal0/" target="_blank" rel="noopener">
+              <span class="cc-label">LeetCode</span>
+              <span class="cc-value">Arnav1_Khandelwal0</span>
+              <span class="cc-action">Open</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== Status bar ===== -->
+  <footer class="statusbar">
+    <span class="status-item"><span class="status-dot" aria-hidden="true"></span>Open to work</span>
+    <span class="status-item" id="statusFile">home.md</span>
+    <span class="status-sep"></span>
+    <span class="status-item" id="githubStat">GitHub · —</span>
+    <span class="status-item">UTF-8</span>
+    <span class="status-item">LF</span>
+  </footer>
+</div>
+
+<!-- ===== Command palette ===== -->
+<div class="palette-overlay" id="paletteOverlay" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <div class="palette">
+    <div class="palette-input-row">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input type="text" id="paletteInput" placeholder="Jump to a file or open a link…" autocomplete="off" spellcheck="false" aria-label="Search sections and links">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="palette-list" id="paletteList"></ul>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
