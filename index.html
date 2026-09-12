@@ -54,6 +54,7 @@
             <li><button class="file file--sub" data-target="projects" data-project="ecommerce" data-icon="py"><span class="ficon ficon--py">Py</span>ecommerce.py</button></li>
             <li><button class="file file--sub" data-target="projects" data-project="motogp" data-icon="ipynb"><span class="ficon ficon--ipynb">◎</span>motogp.ipynb</button></li>
             <li><button class="file file--sub" data-target="projects" data-project="ensemble" data-icon="py"><span class="ficon ficon--py">Py</span>ensemble.py</button></li>
+            <li><button class="file file--sub" data-target="projects" data-project="capstone" data-icon="py"><span class="ficon ficon--py">Py</span>capstone.py</button></li>
           </ul>
         </li>
         <li><button class="file" data-target="skills" data-icon="json"><span class="ficon ficon--json">{ }</span>skills.json</button></li>
@@ -184,7 +185,7 @@
         <!-- ---------- PROJECTS ---------- -->
         <section class="view" id="view-projects" data-view="projects">
           <h2 class="view-title">projects/</h2>
-          <p class="view-kicker">Three shipped things — code, links, and what they actually do.</p>
+          <p class="view-kicker">Four shipped things — code, links, and what they actually do.</p>
 
           <div class="projects-grid">
 
@@ -265,6 +266,35 @@
               </div>
               <div class="project-actions">
                 <span class="btn btn--sm btn--ghost btn--disabled" title="Add your repo/notebook link">Notebook link — add yours</span>
+              </div>
+            </article>
+
+            <article class="project-card" id="project-capstone" tabindex="0">
+              <div class="project-card-head">
+                <span class="ficon ficon--py">Py</span>
+                <h3>DeepNexus — Deep Learning Model Hub</h3>
+              </div>
+              <p class="project-desc">
+                A Django app built during the LaunchED Global internship that serves two deployed ML models
+                behind one interface: a CNN sign-language classifier that reads an uploaded hand-sign image
+                and predicts one of 36 classes (digits 0–9, letters a–z), and a heart-disease risk predictor
+                trained on patient vitals — age, blood pressure, cholesterol, chest pain type, ECG results —
+                run through a scikit-learn encoder + scaler pipeline before classification.
+              </p>
+              <div class="project-metrics">
+                <span class="metric"><strong>36</strong>sign classes</span>
+                <span class="metric"><strong>64×64</strong>CNN input</span>
+                <span class="metric"><strong>2</strong>models, 1 app</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag" data-skill="Python">Python</span>
+                <span class="tag" data-skill="Django">Django</span>
+                <span class="tag" data-skill="TensorFlow">TensorFlow</span>
+                <span class="tag" data-skill="CNNs">CNN</span>
+                <span class="tag" data-skill="Scikit-learn">Scikit-learn</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn--sm btn--primary" href="https://github.com/Arnav-api/Django_ML-Projects/tree/main/CNN_Capstone" target="_blank" rel="noopener">View repository</a>
               </div>
             </article>
 
