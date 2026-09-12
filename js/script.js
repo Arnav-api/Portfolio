@@ -378,6 +378,7 @@
     { label: 'projects / ecommerce.py', hint: 'Project', icon: 'py', action: function () { showView('projects', { project: 'ecommerce' }); } },
     { label: 'projects / motogp.ipynb', hint: 'Project', icon: 'ipynb', action: function () { showView('projects', { project: 'motogp' }); } },
     { label: 'projects / ensemble.py', hint: 'Project', icon: 'py', action: function () { showView('projects', { project: 'ensemble' }); } },
+    { label: 'projects / capstone.py', hint: 'Project', icon: 'py', action: function () { showView('projects', { project: 'capstone' }); } },
     { label: 'skills.json', hint: 'Section', icon: 'json', action: function () { showView('skills'); } },
     { label: 'education.yml', hint: 'Section', icon: 'yml', action: function () { showView('education'); } },
     { label: 'achievements.log', hint: 'Section', icon: 'log', action: function () { showView('achievements'); } },
